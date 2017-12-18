@@ -23,15 +23,6 @@ function openTimeCD(startHour, cd) {
 	hourKza = Math.floor(minKza / 60);
 	
 }
-async function sendMsg(){
-	if(hourKza>=1){
-		hook.send('Kzarka: ' +hourKza+'h'+minKza+'p cua so mo');
-	}
-	else if(secKza>1){
-		hook.send('Kzarka: ' +minKza+'p cua so mo');
-	}
-	else hook.send("Kzarka se spawn bat ky luc nao");
-} 
 
 function sendEmbed(){
 	const embed = new Discord.RichEmbed();
@@ -42,7 +33,7 @@ function sendEmbed(){
 	else if(secKza>1){
 		embed.addField('Window Open','```<Kzarka> '+minKza+'p open window```',true);
 	}
-	else embed.addField('Window Close','```<Kzarka> sap spawn kia```',true);
+	else embed.addField('Window Close','```<Kzarka> opened```',true);
 	hook.send(embed);
 } 
 client.on('message', message => {
